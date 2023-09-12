@@ -5,9 +5,9 @@ if [ "$EUID" -ne 0 ] #checks if script is being run as super user
   exit
 fi
 read -p "HAVE YOU DONE FORENSICS? (y/n)" forensics #confirms that the user wishes to run the script
-if [[ $forensics = y ]] ; then #commmences script
+if [[ $forensics = y || $forensics = Y ]] ; then #commmences script
 echo "beginning script..."
-elif [[ $forensics = n ]] ; then #stops script
+elif [[ $forensics = n || $forensics = N ]] ; then #stops script
 echo "Do the forensics before running this script unless otherwise instructed"
 exit
 else
